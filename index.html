@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Air Quality Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Air Quality Dashboard</h1>
+
+    <!-- KPI -->
+    <div class="kpi-container">
+
+        <div class="card">
+            <h2>Total Site</h2>
+            <p id="site">0</p>
+        </div>
+
+        <div class="card">
+            <h2>Average AQI</h2>
+            <p id="aqi">0</p>
+        </div>
+
+        <div class="card">
+            <h2>Dominant Pollutant</h2>
+            <p id="pollutant">PM2.5</p>
+        </div>
+
+    </div>
+
+
+    <!-- Filter -->
+    <div class="filter-container">
+        <label>Filter Chart :</label>
+
+        <select id="chartFilter">
+            <option value="all">All</option>
+            <option value="bar">Top AQI County</option>
+            <option value="line">Daily AQI Trend</option>
+            <option value="pie">Status Distribution</option>
+            <option value="pollutant">Dominant Pollutants</option>
+        </select>
+    </div>
+
+
+    <div class="top-row">
+
+        <div class="chart-container bar-section">
+            <h2>Top 10 County with Highest AQI</h2>
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="chart-container pie-section">
+            <h2>Distribution</h2>
+            <canvas id="pieChart"></canvas>
+        </div>
+
+    </div>
+
+    <div class="chart-container line-section">
+        <h2>Daily Average AQI Trend</h2>
+        <canvas id="lineChart"></canvas>
+    </div>
+
+    <div class="chart-container pollutant-section">
+        <h2>Dominant Pollutants</h2>
+        <canvas id="pollutantChart"></canvas>
+    </div>
+
+    <footer class="footer">
+
+        <h3>Data Source</h3>
+
+        <p>
+            <strong>Dataset :</strong>
+            Taiwan Air Quality Monitoring Data
+        </p>
+
+        <p>
+            <strong>Provider :</strong>
+            Kaggle
+        </p>
+
+        <p>
+            <strong>URL :</strong>
+            <a href="https://www.kaggle.com/datasets/khaiidoy/taiwan-air-quality-data"
+            target="_blank">
+            https://www.kaggle.com/datasets/khaiidoy/taiwan-air-quality-data
+            </a>
+        </p>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>
